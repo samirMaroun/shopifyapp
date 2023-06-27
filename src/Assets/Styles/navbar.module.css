@@ -1,0 +1,9 @@
+.navbar {
+  background-color: rgb(216 216 216);
+  height: 70px;
+  font-family: Roboto;
+  font-size: 30px;
+  padding-top: 20px;
+  padding-left: 50px;
+  border-bottom: 1px solid #000000;
+}
