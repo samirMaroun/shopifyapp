@@ -40,8 +40,9 @@ const ArtistAlbums = () => {
           paddingTop={5}
           justifyContent={"center"}
         >
-          {albums?.items?.map((album) => (
+          {albums?.items?.map((album, index) => (
             <Grid
+              key={index}
               item
               lg={2.3}
               md={3}
@@ -105,7 +106,7 @@ const ArtistAlbums = () => {
                   e.target.style.cursor = "pointer";
                 }}
                 onClick={() => {
-                  window.open(album.href);
+                  window.open(album.external_urls.spotify);
                 }}
               >
                 Preview on Shopify

@@ -15,9 +15,10 @@ const ArtistSearch = () => {
   const [albums, setAlbums] = useState([]);
   const navigate = useNavigate();
   useEffect(() => {
-    searchArtist(searchText === null ? "" : searchText).then((x) => {
-      setAlbums(x.artists);
-    });
+    if (searchText)
+      searchArtist(searchText === null ? "" : searchText).then((x) => {
+        setAlbums(x.artists);
+      });
   }, [searchText]);
   return (
     <Grid
@@ -31,8 +32,9 @@ const ArtistSearch = () => {
         container
         direction={"row"}
         alignItems={"center"}
-        sm={4}
-        xs={8}
+        lg={4}
+        md={5}
+        xs={11}
         paddingTop={2}
       >
         <TextField
@@ -43,7 +45,7 @@ const ArtistSearch = () => {
             sx: {
               fontFamily: "Roboto",
               fontSize: 30,
-              marginLeft: 10,
+              marginLeft: "10%",
             },
           }}
           InputProps={{
@@ -63,9 +65,9 @@ const ArtistSearch = () => {
           }}
           onChange={(e) => {
             setSearchText(e.target.value);
-            navigate(`/ArtistSearch?search=${e.target.value}`)
+            navigate(`/ArtistSearch?search=${e.target.value}`);
           }}
-          value={searchText}
+          value={searchText ? searchText : ""}
         />
       </Grid>
       {albums?.items ? (
@@ -78,8 +80,9 @@ const ArtistSearch = () => {
           paddingTop={5}
           justifyContent={"center"}
         >
-          {albums?.items?.map((artist) => (
+          {albums?.items?.map((artist, index) => (
             <Grid
+              key={index}
               item
               lg={2.3}
               md={3}
