@@ -33,6 +33,7 @@ const ArtistSearch = () => {
         alignItems={"center"}
         sm={4}
         xs={8}
+        paddingTop={2}
       >
         <TextField
           fullWidth
@@ -80,7 +81,10 @@ const ArtistSearch = () => {
           {albums?.items?.map((artist) => (
             <Grid
               item
-              xs={2.3}
+              lg={2.3}
+              md={3}
+              sm={4}
+              xs={8}
               height={350}
               border={"1px solid #000000"}
               onMouseOver={(e) => {

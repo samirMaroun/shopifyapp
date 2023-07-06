@@ -41,7 +41,15 @@ const ArtistAlbums = () => {
           justifyContent={"center"}
         >
           {albums?.items?.map((album) => (
-            <Grid item xs={2.3} height={410} border={"1px solid #000000"}>
+            <Grid
+              item
+              lg={2.3}
+              md={3}
+              sm={4}
+              xs={8}
+              height={410}
+              border={"1px solid #000000"}
+            >
               <img
                 src={album?.images[0]?.url}
                 width={"100%"}
@@ -65,7 +73,7 @@ const ArtistAlbums = () => {
                 paddingLeft={2}
                 xs={12}
               >
-                {album?.artists?.map((x) => x.name+" ")}
+                {album?.artists?.map((x) => x.name + " ")}
               </Grid>
               <Grid
                 item
